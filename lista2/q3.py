@@ -13,8 +13,10 @@ def odd_last(list: list[int]) -> list[int]:
         return list
     previous_list = odd_last(list[:-1])
     if list[-1] % 2:
+        previous_list.append(list[-1])
+    else:
         previous_list.insert(0, list[-1])
     return previous_list
 
 if __name__ == "__main__":
-    print(odd_last([1, 2, 3, 4, 5]))
+    print(odd_last([1, 2, 3, 4, 5, 6, 6, 4, 2, 3]))
